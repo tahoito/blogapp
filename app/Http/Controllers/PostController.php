@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->get();
-        return view('post.index',compact('post'));
+        return view('posts.index',compact('posts'));
 
     }
 
@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('posts.create');
     }
 
     /**
@@ -37,11 +37,11 @@ class PostController extends Controller
 
         Post::create([
             'user_id' => auth()->id(),
-            'title' => $required->title,
-            'body' => $required->body,
+            'title' => $request->title,
+            'body' => $request->body,
         ]);
 
-        return redirect()->route('post.index') ->with('success','投稿が完了しました');
+        return redirect()->route('posts.index') ->with('success','投稿が完了しました');
     }
 
     /**
