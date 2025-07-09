@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -30,7 +30,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+        Post::create([
+            'user_id' => auth()->id(),
+            'title' => $required->title,
+            'body' => $required->body,
+        ]);
+
+        return redirect()->route('post.index') ->with('success','投稿が完了しました');
     }
 
     /**
