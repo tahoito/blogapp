@@ -19,7 +19,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/posts',[PostController::class, 'index']);
+    Route::get('/posts', function() {
+        return view('posts');
+    });
     Route::post('/posts',[PostController::class,'store']);
 });
 

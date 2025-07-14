@@ -16,9 +16,6 @@
 </head>
 <body class="font-sans antialiased">
 
-    <!-- 🔽ここにVueのappを置く -->
-    <div id="app"></div>
-
     <!-- Laravelの通常コンテンツ -->
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
         @include('layouts.navigation')
