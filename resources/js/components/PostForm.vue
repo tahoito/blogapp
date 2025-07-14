@@ -27,7 +27,7 @@ export default {
   methods: {
     async submitPost() {
       try {
-        await axios.post('/api/posts', {
+        await axios.post('/posts', {
           title: this.title,
           body: this.body,
         });
