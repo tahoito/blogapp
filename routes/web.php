@@ -19,4 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('posts',PostController::class);
 });
 
+Route::get('/vue-test', function () {
+    return view('vue');
+});
+
 require __DIR__.'/auth.php';
