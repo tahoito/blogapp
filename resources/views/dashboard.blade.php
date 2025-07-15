@@ -13,7 +13,7 @@
 
                     <!-- 新規投稿ボタン -->
                     <div class="mt-4">
-                        <a href="/posts" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                        <a href="/posts" class="inline-block bg-blue-500 text-black px-4 py-2 rounded hover:bg-blue-600">
                             新規投稿
                         </a>
                     </div>

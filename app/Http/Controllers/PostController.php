@@ -28,6 +28,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        Log::info('POST送信データ:',$request->all());
+        Log::info('現在のユーザーID:',['id' => auth()->id()]);
+
         $request->validate([
             'title' => 'required|max:255',
             'body' => 'required',
@@ -39,13 +43,14 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('posts.index') ->with('success','投稿が完了しました');
+        return response()->json(['message' => '投稿が完了しました'],201);
     }
 
     /**
      * Display the specified resource.
      */
     public function show(Post $post)
+
     {
         //
     }
