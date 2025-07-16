@@ -1,10 +1,13 @@
 <template>
   <div>
     <h2 class="text-lg font-bold mb-2">投稿一覧</h2>
-    <div v-for="post in posts" :key="post.id" class="border p-2 mb-2">
-      <h3 class="font-bold">{{ post.title }}</h3>
-      <p>{{ post.body }}</p>
-    </div>
+    <ul>
+      <li v-for="post in posts" :key="post.id">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+        <small>投稿者ID: {{ post.user_id }}</small>
+      </li>
+    </ul>
   </div>
 </template>
 
