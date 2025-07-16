@@ -1,3 +1,3 @@
-use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\PostController;
 
 Route::post('/posts', [PostController::class, 'store']);

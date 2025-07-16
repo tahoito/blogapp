@@ -15,7 +15,7 @@
 
 
 <script>
-import axios from 'axios';
+import axios from '../axios';
 
 export default {
   data() {
@@ -30,7 +30,7 @@ export default {
         await axios.post('/posts', {
           title: this.title,
           body: this.body,
-        });
+        },{ withCredentials : true });
         this.title = '';
         this.body = '';
         this.$emit('post-created'); // 一覧再取得用

@@ -12,9 +12,7 @@ export default defineConfig({
     ],
 
     server: {
-        proxy:{
-            '/': 'http://localhost:8000',
-        },
+
     },
 });
 

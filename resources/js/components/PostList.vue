@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     async fetchPosts() {
-      const response = await axios.get('/api/posts');
+      const response = await axios.get('/posts');
       this.posts = response.data;
     }
   },
