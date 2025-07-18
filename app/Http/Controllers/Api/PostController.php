@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Post::latest()-get();
+        return response()->json(Post::all());
     }
 
     public function store(Route $request)
