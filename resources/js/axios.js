@@ -12,3 +12,4 @@ if (token) {
 }
 
 export default axios;
+axios.defaults.withCredentials = true;
