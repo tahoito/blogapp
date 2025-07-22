@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import axios from '../axios';
+import axios from 'axios';
 
 export default {
   data() {
@@ -20,17 +20,18 @@ export default {
       posts: []
     };
   },
-  async created() {
-    await this.fetchPosts();
+  mounted() {
+    this.fetchPosts();  // ページ表示時に呼ぶ
   },
   methods: {
-    async fetchPosts() {
-      try{
-        const res = await axios.get('/posts', { withCredentials : true });
-        this.posts = res.data;
-      } catch(error) {
-        console.error(error);
-      }
+    fetchPosts() {
+      axios.get('http://127.0.0.1:8000/api/posts')  // ←ここでAPIを叩く
+        .then(response => {
+          this.posts = response.data;
+        })
+        .catch(error => {
+          console.error('投稿一覧の取得に失敗しました:', error);
+        });
     }
   }
 };

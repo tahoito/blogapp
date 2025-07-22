@@ -27,10 +27,10 @@ export default {
   methods: {
     async submitPost() {
       try {
-        await axios.post('/posts', {
-          title: this.title,
-          body: this.body,
-        },{ withCredentials : true });
+        await axios.post('http://127.0.0.1:8000/api/posts', {
+        title: this.title,
+        body: this.body,
+      }, { withCredentials: true });
         this.title = '';
         this.body = '';
         this.$emit('post-created'); // 一覧再取得用

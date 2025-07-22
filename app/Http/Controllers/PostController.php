@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return Post::with('user')-latest()->get();
+        $posts = Post::with('user')->latest()->get();
+        return response()->json($posts);
     }
 
     /**
